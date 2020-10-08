@@ -1,6 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
 name: ADV-IT_SDI-IT_CI_MyGitHubActionsBasics
+env:
+  APPLICATION_NAME : "MyFlask"
+  PACKAGE_NAME     : "flask-deploy-ver-${{ github.sha }}"
 
 on:
   push:
@@ -14,6 +17,12 @@ jobs:
     steps:
       - name: Print Hello Message from testing
         run: echo "Hello, world from testing job!"
+      
+      - name: Execute few commands
+        run: 
+         echo "Hello message 1"
+         echo "Hello message 2"
+         echo "Application name is ${{ env.APPLICATION_NAME }}"
           
           
   my_deploy:
@@ -23,3 +32,7 @@ jobs:
     steps:
       - name: Print Hello Message from Deploy
         run: echo "Hello, world from deploy job!"
+        
+      - name: Printing Deployment package
+        run: 
+         echo "Deploy package name is ${{ env.PACKAGE_NAME }}"
