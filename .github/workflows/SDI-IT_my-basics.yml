@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: ADV-IT_SDI-IT_CI_MyGitHubActionsBasics
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Hello Message
+        run: echo "Hello, world from testing job!"
+          
+          
+  my_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print Hello Message
+        run: echo "Hello, world from deploy job!"
